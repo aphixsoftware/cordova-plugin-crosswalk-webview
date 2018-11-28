@@ -23,7 +23,11 @@ public class EngineWrapper implements CordovaWebViewEngine {
     CordovaWebViewEngine engine;
 
     public EngineWrapper(Context context, CordovaPreferences preferences) {
-        engine = new SystemWebViewEngine(context, preferences);
+        if (android.os.Build.VERSION.SDK_INT <= android.os.Build.VERSION_CODES.KITKAT) {
+            engine = new XWalkWebViewEngine(context, preferences);
+        } else {
+            engine = new SystemWebViewEngine(context, preferences);
+        }
     }
 
     @Override
