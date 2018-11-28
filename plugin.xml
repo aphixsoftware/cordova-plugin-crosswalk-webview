@@ -25,7 +25,7 @@
         <preference name="XWALK_MODE" default="embedded" />
         <preference name="XWALK_MULTIPLEAPK" default="true" />
         <config-file target="res/xml/config.xml" parent="/*">
-            <preference name="webView" value="org.crosswalk.engine.XWalkWebViewEngine"/>
+            <preference name="webView" value="org.crosswalk.engine.EngineWrapper"/>
             <preference name="xwalkVersion" value="$XWALK_VERSION"/>
             <preference name="xwalkLiteVersion" value="$XWALK_LITEVERSION"/>
             <preference name="xwalkCommandLine" value="$XWALK_COMMANDLINE"/>
@@ -39,6 +39,7 @@
             <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
         </config-file>
 
+        <source-file src="platforms/android/src/org/crosswalk/engine/EngineWrapper.java" target-dir="src/org/crosswalk/engine"/>
         <source-file src="platforms/android/src/org/crosswalk/engine/XWalkWebViewEngine.java" target-dir="src/org/crosswalk/engine"/>
         <source-file src="platforms/android/src/org/crosswalk/engine/XWalkFileChooser.java" target-dir="src/org/crosswalk/engine"/>
         <source-file src="platforms/android/src/org/crosswalk/engine/XWalkExposedJsApi.java" target-dir="src/org/crosswalk/engine"/>
